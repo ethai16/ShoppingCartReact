@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import addProduct from '../actions/addProduct'
+import '../styles/Cart.css'
 
 class Cart extends React.Component {
     constructor(props) {
@@ -10,8 +11,15 @@ class Cart extends React.Component {
 
 
     render() {
+        var cart = this.props.productCart.map(product =>{
+           return <div>{product.name}</div>
+        })
         return (
-            <div>
+            <div className = "parentPosition">
+                {cart}
+                <div className = "totalBottom">
+                    Total Cost: {this.props.totalCost}
+                </div>
 
             </div>
         );

@@ -1,5 +1,6 @@
 import React from 'react';
 import CatalogItem from './CatalogItem'
+import '../styles/Catalog.css'
 
 class Catalog extends React.Component {
     constructor(props) {
@@ -28,13 +29,15 @@ class Catalog extends React.Component {
 
     render() {
         let catalogProducts;
-        catalogProducts = this.props.productsCatalog.map(product => {
-            return <CatalogItem name = {product.name} price ={product.price} description = {product.description}/>
+        catalogProducts = this.props.productsCatalog.map((product,index) => {
+            return <tr><CatalogItem productData = {this.props.productsCatalog[index]} name = {product.name} price = {product.price} description = {product.description}/></tr>
         })
         return (
-            <div>
-                {catalogProducts}
-            </div>
+            <table className = 'table'>
+                <tbody>
+                    {catalogProducts}
+                </tbody>
+            </table>
         );
     }
 }

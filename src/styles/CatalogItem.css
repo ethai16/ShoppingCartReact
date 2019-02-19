@@ -1,0 +1,8 @@
+.padding{
+    padding: .2vw
+}
+
+.between{
+    display:flex;
+    justify-content: space-between
+}

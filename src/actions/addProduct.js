@@ -1,4 +1,5 @@
 function addProduct(item){
+    console.log('In add Product')
     return {
         type: 'ADD',
         productData: {
